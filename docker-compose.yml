@@ -15,6 +15,7 @@ services:
       DB_DUMP_TARGET: '/data'
       DB_DUMP_SAFECHARS: true
       NICE: true
+      DB_DUMP_BY_SCHEMA: true
       DB_DUMP_ARCHIVE_DAYS_TO_KEEP: 31
     volumes:
       - './scripts.d:/scripts.d'
