@@ -1,0 +1,1 @@
+echo -n "db_backup_$(date -u +"%Y%m%d%H%M%S").tgz"

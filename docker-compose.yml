@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  mysql-backup:
+    image: databack/mysql-backup
+    restart: always
+    user: "0"
+    environment:
+      DB_SERVER: <host>
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASS: <password>
+      DB_NAMES: <db1> <db2> <db3>
+      DB_DUMP_CRON: '0 3 * * *'
+      DB_DUMP_TARGET: '/data'
+      DB_DUMP_SAFECHARS: true
+      NICE: true
+      DB_DUMP_ARCHIVE_DAYS_TO_KEEP: 31
+    volumes:
+      - './scripts.d:/scripts.d'
+      - '/etc/localtime:/etc/localtime'
+      - '/etc/timezone:/etc/timezone'
+      - './data:/data'
