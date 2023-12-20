@@ -18,6 +18,6 @@ services:
       DB_DUMP_ARCHIVE_DAYS_TO_KEEP: 31
     volumes:
       - './scripts.d:/scripts.d'
-      - '/etc/localtime:/etc/localtime'
-      - '/etc/timezone:/etc/timezone'
+      - '/etc/localtime:/etc/localtime:ro'
+      - '/etc/timezone:/etc/timezone:ro'
       - './data:/data'
